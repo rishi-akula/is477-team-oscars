@@ -7,6 +7,12 @@ The goal of this project is to look at how different socioeconomic factors relat
 ## Research or Business Question(s)
 - **Primary Research Question:** How do unemployment, median household income, and educational level relate to adult mental distress across U.S. counties, and which factor is most strongly associated?
 
+To help answer our main research question, we will also look at the following questions:
+  1. How does the unemployment rate relate to adult mental distress across U.S. counties?
+  2. How does median household income relate to adult mental distress across U.S. counties?
+  3. How does educational attainment relate to adult mental distress across U.S counties?
+  4. Which of these three factors has the strongest association with adult mental distress?
+
 ## Datasets
 We use three datasets, all from U.S. federal sources. Each provides a different type of information, and it can all be linked with a 5 digit county FIPS code, which is a 2 digit state code and a 3 digit county code for the year of 2023.
 
