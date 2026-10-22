@@ -43,20 +43,6 @@ We use three datasets, all from U.S. federal sources. Each provides a different 
 - **Format/Size:** 5 columns and 853 rows
 ## Timeline
 
-Milestone 2 will be completed by October 22 at 11:59 p.m. The implementation schedule below uses weeks following the project-plan submission as internal targets. Responsibilities are proposed and will be confirmed by the team before implementation.
-
-| Target | Task and expected output | Responsible members |
-|---|---|---|
-| October 22, before 11:59 p.m. | Finish and review ProjectPlan.md. Josh reviews the overview and questions; Nithin checks dataset descriptions; Rishi completes the timeline, constraints, and gaps; Tito completes the team responsibilities section. Each member commits their own contribution. Rishi creates the project-plan tag and release and submits the release URL to Canvas. | All members; Rishi coordinates submission |
-| Week 1 | Confirm exact dataset releases, variables, reference periods, geographic coverage, and reuse terms. Test downloads and resolve the questions listed under Gaps. Produce a source inventory with links and variable definitions. | Nithin leads; Josh reviews |
-| Week 1 | Establish folders for raw data, processed data, scripts, documentation, and results. Create acquisition scripts that record source URLs, retrieval dates, and SHA-256 checksums while preserving original files. | Tito leads; Nithin supports |
-| Week 2 | Assess accuracy, completeness, timeliness, and consistency before integration. Record missing values, duplicate county identifiers, invalid values, and coverage differences in a quality report. | Nithin and Rishi |
-| Week 2 | Write cleaning scripts that address identified problems. Standardize five-digit FIPS codes, select the relevant measures, and document missing-value handling and exclusions. | Tito leads; Nithin reviews |
-| Week 3 | Join the cleaned datasets by county FIPS. Check key uniqueness, report unmatched counties, compare row counts, and repeat the four-dimension quality assessment on the integrated dataset. | Tito and Rishi |
-| Week 3 | Create descriptive summaries and visualizations. Compare socioeconomic associations with mental distress using the same set of complete county records and a documented association measure. | Josh leads; Rishi reviews |
-| Week 4 | Connect the separate scripts with a run-all script or Snakemake workflow. Complete the data dictionary, machine-readable metadata, dependency list, citations, licensing notes, and reproduction instructions. | Tito leads automation; Nithin leads data documentation; Josh and Rishi review |
-| Week 4 | Test the complete workflow from a fresh clone, resolve failures, and review whether the report accurately describes the methods, results, limitations, and individual contributions. | All members |
-
 ## Constraints
 
 **Temporal comparability:** The proposed sources do not necessarily describe identical time periods. The ACS 2019–2023 five-year estimates summarize a period, while the proposed BLS data describe 2023 annual averages. We must also verify the reference year of the selected CDC measure rather than assuming that its release year is its measurement year. These differences will be documented when interpreting associations.
