@@ -1,10 +1,11 @@
 # Project Plan
 
 ## Overview
-
+The goal of this project is to look at how different socioeconomic factors relate to adult mental distress across U.S counties. Specifically, we want to see how unemployment, median household income, and education level are related to mental distress and determine which of these factors has the strongest association. To do this, we will use data from three different sources: CDC PLACES, the Bureau of Labor Statistics, and the U.S. Census Bureau. Each dataset provides a different part of the information we need and can be connected using five-digit county FIPS codes. We will focus on data from or representing 2023 so that the information is as consistent as possible across the datasets. After collecting the data, we will check its quality, clean and organize the variables we need, and combine the three datasets into one county-level dataset. Once the datasets are integrated, we will analyze the relationships between unemployment, income, education, and adult mental distress to see which socioeconomic factor has the strongest association with mental distress across U.S. counties.
 ## Team
 
 ## Research or Business Question(s)
+- **Primary Research Question:** How do unemployment, median household income, and educational level relate to adult mental distress across U.S. counties, and which factor is most strongly associated?
 
 ## Datasets
 We use three datasets, all from U.S. federal sources. Each provides a different type of information, and it can all be linked with a 5 digit county FIPS code, which is a 2 digit state code and a 3 digit county code for the year of 2023.
