@@ -42,7 +42,56 @@ We use three datasets, all from U.S. federal sources. Each provides a different 
 - **Integration:** Last 5 characters of the GEO_ID because that is the same as the FIPS
 - **Format/Size:** 5 columns and 853 rows
 ## Timeline
+Week 1: Project Setup and Research Questions (October 12–18)
 
+- Establish our GitHub repository and assign responsibilities to each group member.
+- Determine our research question and identify the socioeconomic factors we want to compare with adult mental distress across U.S. counties.
+- Identify three datasets from CDC PLACES, the Bureau of Labor Statistics, and the U.S. Census Bureau that provide the information needed for our analysis.
+- Responsible: All group members.
+
+Week 2: Data Acquisition and Organization (October 19–25)
+
+- Download and organize the three datasets, focusing on data from or representing 2023 to keep our information as consistent as possible.
+- Examine the structure of each dataset and identify the variables needed for our analysis, including mental distress, unemployment, median household income, and education level.
+- Determine how the datasets can be connected using five-digit county FIPS codes.
+- Organize our files within the GitHub repository and document where each dataset came from.
+- Responsible: Members Nithin and Tito.
+
+Week 3: Ethical Considerations and Initial Data Quality Assessment (October 26–November 1)
+
+- Review the licensing, terms of use, and other ethical considerations for each dataset to ensure we can properly use and share the information.
+- Evaluate the accuracy, completeness, timeliness, and consistency of each dataset before cleaning or integrating them.
+- Identify any missing values, inconsistent county identifiers, or differences in coverage that could affect our analysis.
+- Document our findings and determine what changes may be needed before combining the datasets.
+- Responsible: Members Tito and Rishi.
+
+Week 4: Data Cleaning and Integration (November 2–8)
+
+- Clean the datasets by addressing missing values, inconsistent formatting, and any other issues identified during our initial quality assessment.
+- Standardize county FIPS codes and the variables needed for our research question.
+- Combine the cleaned datasets into one county-level dataset using Python/Pandas or SQL.
+- Responsible: Members Nithin and Rishi.
+
+Week 5: Post-Integration Quality Assessment and Analysis (November 9–15)
+
+- Evaluate the integrated dataset for accuracy, completeness, timeliness, and consistency to determine whether the datasets were successfully combined.
+- Analyze the relationships between unemployment, median household income, education level, and adult mental distress.
+- Compare the results to determine which socioeconomic factor has the strongest association with adult mental distress across U.S. counties.
+- Responsible: Members Josh and Rishi.
+
+Week 6: Workflow Automation and Documentation (November 16–22)
+
+- Develop an automated workflow using separate scripts that can reproduce the process from data acquisition through analysis.
+- Document our data sources, cleaning methods, integration process, and any limitations encountered.
+- Update our GitHub repository with the necessary files, metadata, and instructions so the project can be reproduced.
+- Responsible: All group members.
+
+Week 7: Final Review and Submission (November 23–29)
+
+- Review our completed analysis and verify that the results address our original research question.
+- Finalize the project report, visualizations, and supporting documentation.
+- Confirm that our workflow runs successfully and all required files are included in the GitHub repository.
+Responsible: All group members.
 ## Constraints
 
 **Temporal comparability:** The proposed sources do not necessarily describe identical time periods. The ACS 2019–2023 five-year estimates summarize a period, while the proposed BLS data describe 2023 annual averages. We must also verify the reference year of the selected CDC measure rather than assuming that its release year is its measurement year. These differences will be documented when interpreting associations.
