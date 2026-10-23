@@ -131,4 +131,4 @@ Several details remain unresolved before implementation:
 - **Analysis specification:** Josh and Rishi will define how “strongest association” will be compared, including the association measure, missing-data rule, and whether transformations are appropriate.
 - **Acquisition and permissions:** Exact download endpoints, formats, and reuse terms still require verification. Nithin and Tito will test acquisition and document any access restrictions.
 
-These gaps will be addressed during the first implementation week, with the plan updated if verification reveals changes in scope or feasibility.
+These gaps will be addressed during the first implementation week, with the plan being consistently updated if verification reveals changes in scope or feasibility.
