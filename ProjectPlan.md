@@ -3,6 +3,25 @@
 ## Overview
 The goal of this project is to look at how different socioeconomic factors relate to adult mental distress across U.S counties. Specifically, we want to see how unemployment, median household income, and education level are related to mental distress and determine which of these factors has the strongest association. To do this, we will use data from three different sources: CDC PLACES, the Bureau of Labor Statistics, and the U.S. Census Bureau. Each dataset provides a different part of the information we need and can be connected using five-digit county FIPS codes. We will focus on data from or representing 2023 so that the information is as consistent as possible across the datasets. After collecting the data, we will check its quality, clean and organize the variables we need, and combine the three datasets into one county-level dataset. Once the datasets are integrated, we will analyze the relationships between unemployment, income, education, and adult mental distress to see which socioeconomic factor has the strongest association with mental distress across U.S. counties.
 ## Team
+Josh:
+- Develop and refine our research question, focusing on the relationship between socioeconomic factors and adult mental distress across U.S. counties.
+- Outline the overall goals of the project and the approach we will take to answer our research question.
+- Help guide the analysis to ensure our findings address the original research question.
+  
+Nithin:
+- Identify and describe the three datasets from CDC PLACES, the Bureau of Labor Statistics, and the U.S. Census Bureau.
+- Research the information provided by each dataset, including its source, format, and coverage.
+- Explain how the datasets can be connected using five-digit county FIPS codes and help organize the data for integration.
+
+Tito: 
+- Define each team member's responsibilities and organize the overall project timeline.
+- Outline the initial stages of the project, including project setup, data acquisition, organization, and ethical considerations.
+- Plan the initial data quality assessment to identify potential issues with accuracy, completeness, timeliness, and consistency before integration.
+
+Rishi:
+- Identify potential limitations and challenges with the datasets, including missing values, differences in coverage, and possible integration issues.
+- Outline any gaps in our current project plan and areas where additional information or work may be needed.
+- Develop the second half of the project timeline, covering data cleaning, integration, post-integration quality assessment, analysis, workflow automation, documentation, and final submission.
 
 ## Research or Business Question(s)
 - **Primary Research Question:** How do unemployment, median household income, and educational level relate to adult mental distress across U.S. counties, and which factor is most strongly associated?
