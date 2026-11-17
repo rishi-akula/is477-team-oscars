@@ -48,7 +48,7 @@ The processing contract now explicitly specifies one selected observation per co
 
 **Reproducibility and permissions:** Reuse conditions, data citations, licenses, full metadata, visualizations, and acquisition integration remain incomplete. Public accessibility is not sufficient evidence of unrestricted redistribution. A successful synthetic test run must not be described as a successful end-to-end research workflow.
 
-## Updated timeline for Rishi's remaining work
+## Updated timeline for remaining work
 
 These are proposed internal targets, not confirmed Canvas deadlines. Acquisition handoff and teammate availability must be confirmed; delays move dependent work rather than justify unsupported completion claims.
 
