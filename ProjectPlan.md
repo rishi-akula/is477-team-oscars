@@ -61,14 +61,14 @@ We use three datasets, all from U.S. federal sources. Each provides a different 
 - **Integration:** Last 5 characters of the GEO_ID because that is the same as the FIPS
 - **Format/Size:** 5 columns and 853 rows
 ## Timeline
-Week 1: Project Setup and Research Questions (October 12–18)
+Week 1: Project Setup and Research Questions (October 12-18)
 
 - Establish our GitHub repository and assign responsibilities to each group member.
 - Determine our research question and identify the socioeconomic factors we want to compare with adult mental distress across U.S. counties.
 - Identify three datasets from CDC PLACES, the Bureau of Labor Statistics, and the U.S. Census Bureau that provide the information needed for our analysis.
 - Responsible: All group members.
 
-Week 2: Data Acquisition and Organization (October 19–25)
+Week 2: Data Acquisition and Organization (October 19-25)
 
 - Download and organize the three datasets, focusing on data from or representing 2023 to keep our information as consistent as possible.
 - Examine the structure of each dataset and identify the variables needed for our analysis, including mental distress, unemployment, median household income, and education level.
@@ -76,7 +76,7 @@ Week 2: Data Acquisition and Organization (October 19–25)
 - Organize our files within the GitHub repository and document where each dataset came from.
 - Responsible: Members Nithin and Tito.
 
-Week 3: Ethical Considerations and Initial Data Quality Assessment (October 26–November 1)
+Week 3: Ethical Considerations and Initial Data Quality Assessment (October 26-November 1)
 
 - Review the licensing, terms of use, and other ethical considerations for each dataset to ensure we can properly use and share the information.
 - Evaluate the accuracy, completeness, timeliness, and consistency of each dataset before cleaning or integrating them.
@@ -84,28 +84,28 @@ Week 3: Ethical Considerations and Initial Data Quality Assessment (October 26�
 - Document our findings and determine what changes may be needed before combining the datasets.
 - Responsible: Members Tito and Rishi.
 
-Week 4: Data Cleaning and Integration (November 2–8)
+Week 4: Data Cleaning and Integration (November 2-8)
 
 - Clean the datasets by addressing missing values, inconsistent formatting, and any other issues identified during our initial quality assessment.
 - Standardize county FIPS codes and the variables needed for our research question.
 - Combine the cleaned datasets into one county-level dataset using Python/Pandas or SQL.
 - Responsible: Members Nithin and Rishi.
 
-Week 5: Post-Integration Quality Assessment and Analysis (November 9–15)
+Week 5: Post-Integration Quality Assessment and Analysis (November 9-15)
 
 - Evaluate the integrated dataset for accuracy, completeness, timeliness, and consistency to determine whether the datasets were successfully combined.
 - Analyze the relationships between unemployment, median household income, education level, and adult mental distress.
 - Compare the results to determine which socioeconomic factor has the strongest association with adult mental distress across U.S. counties.
 - Responsible: Members Josh and Rishi.
 
-Week 6: Workflow Automation and Documentation (November 16–22)
+Week 6: Workflow Automation and Documentation (November 16-22)
 
 - Develop an automated workflow using separate scripts that can reproduce the process from data acquisition through analysis.
 - Document our data sources, cleaning methods, integration process, and any limitations encountered.
 - Update our GitHub repository with the necessary files, metadata, and instructions so the project can be reproduced.
 - Responsible: All group members.
 
-Week 7: Final Review and Submission (November 23–29)
+Week 7: Final Review and Submission (November 23-29)
 
 - Review our completed analysis and verify that the results address our original research question.
 - Finalize the project report, visualizations, and supporting documentation.
@@ -113,7 +113,7 @@ Week 7: Final Review and Submission (November 23–29)
 Responsible: All group members.
 ## Constraints
 
-**Temporal comparability:** The proposed sources do not necessarily describe identical time periods. The ACS 2019–2023 five-year estimates summarize a period, while the proposed BLS data describe 2023 annual averages. We must also verify the reference year of the selected CDC measure rather than assuming that its release year is its measurement year. These differences will be documented when interpreting associations.
+**Temporal comparability:** The proposed sources do not necessarily describe identical time periods. The ACS 2019-2023 five-year estimates summarize a period, while the proposed BLS data describe 2023 annual averages. We must also verify the reference year of the selected CDC measure rather than assuming that its release year is its measurement year. These differences will be documented when interpreting associations.
 
 **Geographic alignment and missing data:** Shared county FIPS codes provide a potential linkage, but matching coverage must be verified. Formatting differences, geographic changes, missing estimates, and duplicate records could prevent valid joins. We will preserve leading zeros, check identifier uniqueness, and report unmatched or excluded counties. Missing values will not automatically be treated as zero, and exclusions may limit how broadly our findings apply.
 
@@ -138,6 +138,6 @@ These gaps will be addressed during the first implementation week, with the plan
 
 As of November 16, 2026, our project includes a modular processing implementation for pre-integration assessment, cleaning, integration, post-integration checks, and exploratory analysis. See [StatusReport.md](StatusReport.md) and the [processing guide](docs/Processing.md). Eight synthetic-data tests pass; actual-source cleaning, integration, and analysis are not yet verified because source inputs and acquisition/staging scripts were not committed at the time of review.
 
-The original Week 4–5 dates must not be interpreted as evidence that real-data processing is complete. Proposed recovery targets are November 17–18 for the acquisition handoff and input review, November 19–20 for real-data assessment/cleaning/integration, November 21–22 for post-integration review and exploratory analysis, November 23–25 for full workflow documentation, and November 26–29 for fresh-clone verification and final review. These internal targets depend on the input handoff and must be aligned with the actual Canvas deadlines.
+The original Week 4-5 dates must not be interpreted as evidence that real-data processing is complete. Proposed recovery targets are November 17-18 for the acquisition handoff and input review, November 19-20 for real-data assessment/cleaning/integration, November 21-22 for post-integration review and exploratory analysis, November 23-25 for full workflow documentation, and November 26-29 for fresh-clone verification and final review. These internal targets depend on the input handoff and must be aligned with the actual Canvas deadlines.
 
 The implementation requires one selected record per county per source, explicit reference-period fields, and consistent variable units. It retains unmatched counties in the integrated output and uses a separately documented complete-case sample for exploratory Pearson correlations. Source-specific adapters, CDC measure/year verification, an ACS coverage check, geographic validation, licensing review, and team review of the association method remain outstanding. No instructor feedback was available in the repository; feedback-based revisions must be added when the team provides it.

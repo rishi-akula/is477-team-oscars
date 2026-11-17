@@ -24,11 +24,11 @@ The acquisition owners must preserve original files under `data/raw/` and implem
 
 | File | Required columns | Reference period |
 |---|---|---|
-| `cdc.csv` | `fips`, `period_start`, `period_end`, `mental_distress_pct` | 2023–2023, conditional on source verification |
-| `bls.csv` | `fips`, `period_start`, `period_end`, `unemployment_pct` | 2023–2023 annual averages |
-| `acs.csv` | `fips`, `period_start`, `period_end`, `median_household_income`, `bachelors_pct` | 2019–2023 pooled estimates |
+| `cdc.csv` | `fips`, `period_start`, `period_end`, `mental_distress_pct` | 2023-2023, conditional on source verification |
+| `bls.csv` | `fips`, `period_start`, `period_end`, `unemployment_pct` | 2023-2023 annual averages |
+| `acs.csv` | `fips`, `period_start`, `period_end`, `median_household_income`, `bachelors_pct` | 2019-2023 pooled estimates |
 
-Each file must contain one row per county after selecting the intended measure, geography, estimate type, and period. Use UTF-8 CSV. Percentages use the 0–100 scale; income is the ACS estimate in dollars with the source's dollar-year definition recorded. Confirm the educational population denominator with source documentation. Record the precise CDC mental-distress definition and whether the selected estimate is crude or age-adjusted. The source release year must not be substituted for its observation/reference year. If a verified CDC period differs, the team must revise the scope and the validation rule together.
+Each file must contain one row per county after selecting the intended measure, geography, estimate type, and period. Use UTF-8 CSV. Percentages use the 0-100 scale; income is the ACS estimate in dollars with the source's dollar-year definition recorded. Confirm the educational population denominator with source documentation. Record the precise CDC mental-distress definition and whether the selected estimate is crude or age-adjusted. The source release year must not be substituted for its observation/reference year. If a verified CDC period differs, the team must revise the scope and the validation rule together.
 
 Keep FIPS as five-character text. The cleaner can restore leading zeros but cannot establish that an identifier is an officially valid county. Supply a reviewed county/county-equivalent universe and document exclusions, geographic changes, and territory treatment before final analysis. Raw Census sentinel values require documented adapter handling; negative numerical values currently stop processing rather than silently becoming zeros.
 

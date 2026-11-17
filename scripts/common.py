@@ -32,7 +32,7 @@ def write_json(path, obj):
 def fips(value):
     value = value.strip()
     if not value.isascii() or not value.isdigit() or not 1 <= len(value) <= 5:
-        raise ValueError('FIPS must contain 1–5 ASCII digits')
+        raise ValueError('FIPS must contain 1-5 ASCII digits')
     value = value.zfill(5)
     if value[:2] == '00' or value[2:] == '000':
         raise ValueError('Aggregate/invalid FIPS')

@@ -40,7 +40,7 @@ def integrate(directory, output):
     write_json(Path(output) / 'post_quality.json', {
         'accuracy': {'source_values_preserved': True, 'limitation': 'No external source-value validation performed by this join.'},
         'completeness': {'union_counties': len(union), 'matched_all_sources': len(intersection), 'complete_case_counties': len(complete), 'missing_from_source': {s: sorted(union - set(t)) for s, t in tables.items()}, 'missing_variables': {v: sum(r[v] == '' for r in result) for v in variables}},
-        'timeliness': {'cdc': '2023', 'bls': '2023', 'acs': '2019–2023 pooled estimate; not a single-year observation'},
+        'timeliness': {'cdc': '2023', 'bls': '2023', 'acs': '2019-2023 pooled estimate; not a single-year observation'},
         'consistency': {'unique_output_keys': len(result) == len(union), 'join': 'one-to-one full outer; no imputation'},
     })
 
