@@ -1,4 +1,3 @@
-"""Processing-only orchestrator. Acquisition and source adapters are not yet connected."""
 import argparse
 import subprocess
 import sys
