@@ -37,7 +37,11 @@ def cdc(raw, staged, provenance):
     records = json.loads(data)
     if not records or len(records) >= 10000:
         raise ValueError('CDC query empty or limit reached; verify pagination')
-    result = [{'fips': row['locationid'], 'period_start': 2023, 'period_end': 2023, 'mental_distress_pct': row.get('data_value', '')} for row in records]
+    # Socrata response can include non-county aggregate IDs (observed: "59").
+    # Preserve those in the raw response; stage only five-digit county IDs.
+    result = [{'fips': row['locationid'], 'period_start': 2023, 'period_end': 2023, 'mental_distress_pct': row.get('data_value', '')} for row in records if len(row.get('locationid', '')) == 5 and row['locationid'].isascii() and row['locationid'].isdigit()]
+    if len(result) != len({r['fips'] for r in result}):
+        raise ValueError('CDC has duplicate county IDs')
     write_csv(staged / 'cdc.csv', ['fips', 'period_start', 'period_end', 'mental_distress_pct'], result)
     return len(result)
 
