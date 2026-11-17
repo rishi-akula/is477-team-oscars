@@ -1,16 +1,16 @@
 # County data processing: Milestone 3 handoff
 
-This documents our team's processing workflow and the remaining steps needed to connect it to source acquisition. It is **not yet an acquisition-to-analysis workflow**. No real datasets were present in the repository when this contribution was prepared. Tests create tiny synthetic fixtures in temporary directories; they are not research data, do not meet the 100-record requirement, and must not be reported as findings.
+This implements the processing work shared by Rishi in the project plan. It is **not yet an acquisition-to-analysis workflow**. No real datasets were present in the repository when this contribution was prepared. Tests create tiny synthetic fixtures in temporary directories; they are not research data, do not meet the 100-record requirement, and must not be reported as findings.
 
 ## Reproduce the software checks
 
-Use Python 3.10 or newer; the scripts require only the Python standard library. From the repository root:
+Use Python 3.10 or newer. Processing scripts require the standard library; the BLS acquisition step additionally requires `openpyxl==3.1.5`. Install with `python -m pip install -r requirements.txt`. From the repository root:
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-After acquisition and source-specific staging have been implemented:
+Once all three source files are available, run `python scripts/acquire.py --root .`, then:
 
 ```bash
 python run_processing.py --input data/staged --output outputs
@@ -37,7 +37,7 @@ Keep FIPS as five-character text. The cleaner can restore leading zeros but cann
 1. [`assess.py`](../scripts/assess.py) records input SHA-256 checksums, missing counts, invalid values, duplicate keys, reference-period checks, and whether each input has at least 100 rows. The row threshold is reported rather than enforced so small software fixtures can run. Real research inputs must satisfy the course requirement.
 2. [`clean.py`](../scripts/clean.py) normalizes identifiers, numerical formatting, and explicit missing markers. It fails on duplicates, invalid values, or unexpected periods. It writes cleaned CSVs and an operation log without altering source inputs. No imputation or outlier deletion is performed.
 3. [`integrate.py`](../scripts/integrate.py) validates one-to-one keys and creates `integrated.csv` using the union of county identifiers. Source-presence flags and unmatched-county lists preserve evidence of coverage loss. `analysis_sample.csv` contains only counties present in all sources with all four analytical variables observed. `post_quality.json` records the join checks under the four quality dimensions.
-4. [`analyze.py`](../scripts/analyze.py) writes unweighted Pearson correlations on the same complete-case sample. The largest absolute coefficient is an exploratory comparison; ties are retained. Fewer than three observations or constant variables produce null correlations. It does not adjust for confounders, calculate significance, or imply causation. This provisional method needs team review. Visualizations remain to be implemented.
+4. [`analyze.py`](../scripts/analyze.py) writes unweighted Pearson correlations on the same complete-case sample. The largest absolute coefficient is an exploratory comparison; ties are retained. Fewer than three observations or constant variables produce null correlations. It does not adjust for confounders, calculate significance, or imply causation. This provisional method needs Josh's review. Visualizations remain to be implemented.
 
 [`run_processing.py`](../run_processing.py) calls these stages in order and stops on errors. It contains orchestration rather than processing logic.
 
@@ -48,4 +48,8 @@ Keep FIPS as five-character text. The cleaner can restore leading zeros but cann
 - **Timeliness:** Preserve reference periods and obtain release/retrieval dates in the acquisition provenance record. ACS pooling remains a limitation even when the end year matches.
 - **Consistency:** Check uniqueness, units, identifiers, and period selection. Matching strings alone do not prove geographic equivalence.
 
-The acquisition stage must supply raw files, verified source metadata and permissions, and staging adapters before real-data execution. Hashes here describe the staged files received; they do not prove authenticity or replace raw-download integrity checks. Retain raw-file hashes and provenance separately. Final acceptance also requires source citations, licenses, machine-readable metadata, a full data dictionary, a visualization, and a fresh-clone run starting with acquisition. No data redistribution license is inferred from public accessibility.
+Nithin and Tito's acquisition work must supply raw files, verified source metadata and permissions, and staging adapters before real-data execution. Hashes here describe the staged files received; they do not prove authenticity or replace raw-download integrity checks. Retain raw-file hashes and provenance separately. Final acceptance also requires source citations, licenses, machine-readable metadata, a full data dictionary, a visualization, and a fresh-clone run starting with acquisition. No data redistribution license is inferred from public accessibility.
+
+## Acquisition status (November 16, 2026)
+
+The [acquisition script](../scripts/acquire.py) successfully retrieved CDC PLACES MHLTH age-adjusted 2023 county estimates and the official BLS 2023 county workbook. It stored original bytes locally with SHA-256 provenance in [`data/acquisition_status.json`](../data/acquisition_status.json) and staged [`cdc.csv`](../data/staged/cdc.csv) and [`bls.csv`](../data/staged/bls.csv). It cannot yet complete ACS acquisition: the Census API returns an HTML `/missing_key.html` access page rather than JSON. The script rejects this content and records `complete: false`. Do not run the three-source processing workflow or claim research findings until an official ACS source is acquired, staged, and checked. The raw CDC and BLS downloads are not committed yet; the final assignment requires accessible originals.

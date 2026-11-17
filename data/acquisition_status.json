@@ -1,0 +1,21 @@
+{
+  "source_files": {
+    "cdc_mhlth_2023.json": {
+      "url": "https://data.cdc.gov/resource/swc5-untb.json?%24select=year%2Clocationid%2Cmeasureid%2Cdatavaluetypeid%2Cdata_value%2Clow_confidence_limit%2Chigh_confidence_limit&%24where=year%3D%272023%27+AND+measureid%3D%27MHLTH%27+AND+datavaluetypeid%3D%27AgeAdjPrv%27&%24limit=10000",
+      "retrieved_utc": "2026-11-17T01:32:06.003360+00:00",
+      "sha256": "1669e56cac3956a4b643d9368806bc4c552550fc11ecd71f8d5197fb7730f06d",
+      "bytes": 499819
+    },
+    "laucnty23.xlsx": {
+      "url": "https://www.bls.gov/lau/laucnty23.xlsx",
+      "retrieved_utc": "2026-11-17T01:32:10.180179+00:00",
+      "sha256": "d5d7b3a80c941f96f1a38a76ac088532eb7f1c7fd0c28cf7718519a194f807be",
+      "bytes": 232111
+    }
+  },
+  "staged_counts": {
+    "cdc": 2958,
+    "bls": 3221
+  },
+  "complete": false
+}
