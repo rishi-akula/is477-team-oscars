@@ -32,7 +32,7 @@ Eight tests passed using temporary synthetic fixtures. They cover FIPS handling,
 
 ## Changes to the plan
 
-The original schedule placed cleaning in November 2–8 and analysis in November 9–15. Repository evidence does not support marking those stages complete on actual data. The revised sequence separates software readiness from verified data availability and makes later work dependent on the input handoff. The [Milestone 3 addendum](ProjectPlan.md#milestone-3-update-rishis-work) records this change while retaining the original plan for comparison.
+The original schedule placed cleaning in November 2–8 and analysis in November 9-15. Repository evidence does not support marking those stages complete on actual data. The revised sequence separates software readiness from verified data availability and makes later work dependent on the input handoff. The [Milestone 3 addendum](ProjectPlan.md#milestone-3-update-rishis-work) records this change while retaining the original plan for comparison.
 
 The processing contract now explicitly specifies one selected observation per county and source, five-digit FIPS identifiers, reference-period columns, and the four analytical variables. This is a proposed standardized interface rather than a description of the raw downloads. No Milestone 2 instructor feedback was available in the repository, so no changes are attributed to instructor feedback. The team must incorporate that feedback when it is available.
 
