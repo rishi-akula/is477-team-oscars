@@ -132,3 +132,12 @@ Several details remain unresolved before implementation:
 - **Acquisition and permissions:** Exact download endpoints, formats, and reuse terms still require verification. Nithin and Tito will test acquisition and document any access restrictions.
 
 These gaps will be addressed during the first implementation week, with the plan being consistently updated if verification reveals changes in scope or feasibility.
+
+
+## Milestone 3 update: Rishi's work
+
+As of November 16, 2026, the shared processing work assigned to Rishi has a modular implementation for pre-integration assessment, cleaning, integration, post-integration checks, and exploratory analysis. See [StatusReport.md](StatusReport.md) and the [processing guide](docs/Processing.md). Eight synthetic-data tests pass; actual-source cleaning, integration, and analysis are not yet verified because source inputs and acquisition/staging scripts were not committed at the time of review.
+
+The original Week 4–5 dates must not be interpreted as evidence that real-data processing is complete. Proposed recovery targets are November 17–18 for the acquisition handoff and input review, November 19–20 for real-data assessment/cleaning/integration, November 21–22 for post-integration review and exploratory analysis with Josh, November 23–25 for full workflow documentation, and November 26–29 for fresh-clone verification and final review. These internal targets depend on the input handoff and must be aligned with the actual Canvas deadlines.
+
+The implementation requires one selected record per county per source, explicit reference-period fields, and consistent variable units. It retains unmatched counties in the integrated output and uses a separately documented complete-case sample for exploratory Pearson correlations. Source-specific adapters, CDC measure/year verification, an ACS coverage check, geographic validation, licensing review, and Josh's review of the association method remain outstanding. No instructor feedback was available in the repository; feedback-based revisions must be added when the team provides it.
